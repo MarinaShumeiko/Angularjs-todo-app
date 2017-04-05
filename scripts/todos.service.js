@@ -9,4 +9,7 @@ angular.module("MyTodoList")
         this.saveTodos = function(todo){
             console.log(todos.length + " todos have been saved!");
         };
+        this.markAll = function(todo) {
+            console.log("all todos were completed!");
+        }
     });

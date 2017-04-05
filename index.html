@@ -19,13 +19,19 @@
   </header>
   <main class="main-content" ng-controller="todosCtrl">
     <!--<todos></todos>-->
-    <form id="todo-form" class="todo-form">
-      <input id="new-todo" 
-        class="todo-input" 
-        placeholder="What needs to be done?"
-        ng-model="addNewTodo">
-      <button class="btn btn--link" ng-click="addTodo()"> add</button>
-    </form>
+    <div class="background-grey">
+      <form id="todo-form" class="todo-form">
+        <input id="new-todo" 
+          class="todo-input" 
+          placeholder="What needs to be done?"
+          ng-model="addNewTodo">
+        <button class="btn btn--link" ng-click="addTodo()"> add</button>
+      </form>
+      <div class="toggle-section">
+        <input id="toggle-all" class="checkbox" type="checkbox" ng-model="completeAll" ng-click="markAll()">
+        <label for="toggle-all">Mark all as complete</label>
+      </div>
+    </div>
     <ul class="todo-list" id="todoList">
         <li 
           ng-repeat="todo in todos | orderBy: 'completed'"

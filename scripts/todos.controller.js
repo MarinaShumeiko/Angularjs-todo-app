@@ -28,6 +28,14 @@ angular.module("MyTodoList")
 			});
 			dataService.saveTodos(filteredTodos);
 		}
+		
+		$scope.markAll = function (todo) {
+			dataService.markAll(todo);
+			angular.forEach($scope.todos, function (todo) {
+				todo.completed = $scope.completeAll;
+			});
+		}; 
+		
 		// $scope.myFunct = function(keyEvent) {
 		// 	if (keyEvent.which === 13)
 		// 		alert('I am an alert');
