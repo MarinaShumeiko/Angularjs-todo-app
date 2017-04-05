@@ -1,22 +1,73 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>JavaScript and the DOM</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <h1 id="myHeading">JavaScript and the DOM</h1>
-    <p>Making a web page interactive</p>
-    
-    <p class="description">Things that are purple:</p>
-    <input type="text" class="description">
-    <button class="description">Change list description</button>
-    <ul>
-      <li>grapes</li>
-      <li>amethyst</li>
-      <li>lavender</li>
-      <li>plums</li>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>A little Angular site</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body ng-app="MyTodoList">
+  <header id="header" class="header">
+    <h1 class="title title--large">Todo List</h1>
+  </header>
+  <main class="main-content" ng-controller="todosCtrl">
+    <!--<todos></todos>-->
+    <form id="todo-form" class="todo-form">
+      <input id="new-todo" 
+        class="todo-input" 
+        placeholder="What needs to be done?"
+        ng-model="addNewTodo">
+      <button class="btn btn--link" ng-click="addTodo()"> add</button>
+    </form>
+    <ul class="todo-list" id="todoList">
+        <li 
+          ng-repeat="todo in todos | orderBy: 'completed'"
+          ng-class="{'completed' : todo.completed}"
+          ng-init="todo.completed = false">
+          <input class="checkbox" type="checkbox"
+            ng-model="todo.completed"
+            ng-click="todo.edeted = true"/>
+
+          <label class="edit-todo"
+            ng-hide="editing"
+            ng-click="editing = true"
+            ng-class="{'todo-label': todo.edited}"
+            >{{todo.name}}
+          </label>
+
+          <input 
+            class="todo-input edit-todo" type="text"
+            ng-show="editing"
+            ng-model="todo.name"
+            ng-blur="editing = false"
+            ng-change="todo.edited = true"
+          />
+          
+          <button class="btn btn--link" ng-click="saveTodos(todo)"> save</button>
+          <!--<button class="btn btn--cta" ng-click="editing = !editing">edit </button>-->
+          <button  class="btn btn--warrning" ng-click="deleteTodo(todo, $index)"> delete </button>
+        </li>
     </ul>
-    <script src="app.js"></script>
-  </body>
+  </main>
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  <script src="scripts/app.js"></script>
+  <script src="scripts/todos.controller.js" type="text/javascript"></script>
+  <script src="scripts/todos.directive.js" type="text/javascript"></script>
+  <script src="scripts/todos.service.js" type="text/javascript"></script>
+</body>
+
 </html>

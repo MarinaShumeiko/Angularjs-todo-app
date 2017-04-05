@@ -1,0 +1,183 @@
+
+
+
+h1 {
+  margin-bottom: 0;
+}
+h1 + p {
+  font-size: 1.08em;
+  color: #637a91;
+  margin-top: .5em;
+  margin-bottom: 2.65em;
+  padding-bottom: 1.325em;
+  border-bottom: 1px dotted;
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+li {
+  padding: .45em .5em;
+  margin-bottom: .35em;
+  display: flex;
+  align-items: center;
+}
+input,
+button {
+  font-size: .85em;
+  padding: .65em 1em;
+  border-radius: .3em;
+  outline: 0;
+}
+
+div {
+  margin-top: 2.8em;
+  padding: 1.5em 0 .5em;
+  border-top: 1px dotted #637a91;
+}
+p.description,
+p:nth-of-type(2) {
+  font-weight: bold;
+}
+/* Buttons */
+button {
+  color: white;
+  background: #508abc;
+  border: solid 1px;
+  border-color: rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+button + button {
+  margin-left: .5em;
+}
+p + button {
+  background: #52bab3;
+}
+.list button + button {
+  background: #768da3;
+}
+.list li button + button {
+  background: #508abc;
+}
+li button:first-child {
+  margin-left: auto;
+  background: #52bab3;
+}
+.list li button:last-child {
+  background: #768da3;
+}
+li button {
+  font-size: .75em;
+  padding: .5em .65em;
+}
+
+html {
+  background: #eee;
+}
+
+body {
+  font-family: "Open Sans",sans-serif;
+  line-height: 1.4;
+  font-size: 14px;
+  color: #495b66;
+  box-sizing: border-box;
+}
+.header {
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ddd;
+}
+.title {
+  margin: 0;
+  font-weight: 400;
+}
+.title--large {
+  font-size: 24px;
+}
+.header .title {
+  text-align: center;
+}
+.main-content {
+  background: #fff;
+  border-radius: 4px;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+.todo-form {
+  display: flex;
+  margin-bottom: 20px
+}
+input {
+  border: 1px solid #dcdcdc;
+}
+
+ul.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+}
+ul.todo-list li {
+  display: flex;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+ul.todo-list .completed label {
+  color: #70dbad;
+  text-decoration: line-through ;
+}
+ul.todo-list li:last-child {
+  border: none;
+}
+.todo-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 11px 12px 8px 12px;
+  outline: none;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin: 0;
+}
+.checkbox {
+  margin-top: 8px;
+  margin-right: 1em;
+}
+.edit-todo {
+  flex: 1;
+  position: relative;
+}
+.todo-label:after {
+  content: 'edited';
+  color: #999;
+  font-size: .8em;
+  font-style: italic;
+}
+.btn {
+  border: none;
+  padding: 12px 8px;
+  color: #fff;
+  background-color: #70dbad;
+  border: 1px solid #70dbad;
+  margin-left: 5px;
+  min-width: 70px;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.btn--link {
+  border: 1px solid #70dbad;
+  background: #fff;
+  color: #70dbad;
+}
+
+.btn--warrning {
+  background: #ffc3bf;
+  border: 1px solid #ffc3bf;
+  color: #992f28;
+}
